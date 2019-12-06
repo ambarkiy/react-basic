@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ToDoReadOnly from './readonly-component';
-import ToDoRemovable from './basic-state';
+import ToDoRemovable from './editable-component';
 
 class App extends Component {
 	render() {

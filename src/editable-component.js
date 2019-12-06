@@ -14,7 +14,7 @@ const toDo = [
 	{
 		id: 3,
 		title: 'interaction entre composants',
-		description: 'interraction entre composant'
+		description: 'interraction entree composant'
 	}
 ];
 
@@ -22,7 +22,6 @@ class ToDoRemovable extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { toDo };
-		this.Supprimer = this.Supprimer.bind(this);
 	}
 
 	render() {
@@ -30,15 +29,14 @@ class ToDoRemovable extends Component {
 			<div key={item.id}>
 				{item.title}
 				<span>{item.description}</span>
-				<button onClick={() => this.Supprimer(item.id)}>Supprimer</button>
+				<button onClick={this.Supprimer(item.id)}>Supprimer</button>
 			</div>
 		));
 	}
 
-	Supprimer(itemId) {
-		console.log(itemId);
+	Supprimer = (itemId) => {
 		const filteredToDo = this.state.toDo.filter((item) => item.id !== itemId);
 		this.setState({ toDo: filteredToDo });
-	}
+	};
 }
 export default ToDoRemovable;
