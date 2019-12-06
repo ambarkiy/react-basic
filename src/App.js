@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-
-const toDo = [
-	"utiliser le state pour mettre un jour les propriétés d'un composant",
-	'on verra pour la suites'
-];
+import ToDoReadOnly from './readonly-component';
+import ToDoRemovable from './basic-state';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { toDo: toDo };
-	}
-
 	render() {
-		return this.state.toDo.map((todo) => <h2>{todo}</h2>);
+		return (
+			<div>
+				<ToDoReadOnly />
+				<ToDoRemovable />
+			</div>
+		);
 	}
 }
 
