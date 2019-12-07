@@ -18,25 +18,32 @@ const toDo = [
 	}
 ];
 
-class ToDoRemovable extends Component {
+class EventHandlerDeclaration extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { toDo };
 	}
 
 	render() {
-		return this.state.toDo.map((item) => (
-			<div key={item.id}>
-				{item.title}
-				<span>{item.description}</span>
-				<button onClick={() => this.Supprimer(item.id)}>Supprimer</button>
+		return (
+			<div>
+				{this.state.toDo.map((item) => {
+					const supprimer = () => this.Supprimer(item.id);
+					return (
+						<div key={item.id}>
+							<h4>{item.title}</h4>
+							<span>{item.description}</span>
+							<button onClick={supprimer}>Supprimer Bis</button>
+						</div>
+					);
+				})}
 			</div>
-		));
+		);
 	}
 
-	Supprimer = (itemId) => {
+	Supprimer(itemId) {
 		const filteredToDo = this.state.toDo.filter((item) => item.id !== itemId);
 		this.setState({ toDo: filteredToDo });
-	};
+	}
 }
-export default ToDoRemovable;
+export default EventHandlerDeclaration;

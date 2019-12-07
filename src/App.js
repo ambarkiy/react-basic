@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoReadOnly from './readonly-component';
 import ToDoRemovable from './editable-component';
+import EventHandlerDeclaration from './event-handler-declaration';
 
 class App extends Component {
 	render() {
@@ -8,6 +9,7 @@ class App extends Component {
 			<div>
 				<ToDoReadOnly />
 				<ToDoRemovable />
+				<EventHandlerDeclaration />
 			</div>
 		);
 	}
