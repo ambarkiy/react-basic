@@ -28,19 +28,22 @@ const toDo = [
 //avec fonction flechée
 const isSearched = (searchTerm) => (item) => item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
-class HigherOrderFunction extends Component {
+class Destructuration extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { toDo, searchTerm: '' };
 		this.OnSearchChange = this.OnSearchChange.bind(this);
 	}
 	render() {
+		//destructuration
+		const { toDo, searchTerm } = this.state;
+
 		return (
 			<div>
 				<form>
 					<input type='text' onChange={this.OnSearchChange} />
 					<div>
-						{this.state.toDo.filter(isSearched(this.state.searchTerm)).map((item) => {
+						{toDo.filter(isSearched(searchTerm)).map((item) => {
 							return (
 								<div key={item.id}>
 									<h4>{item.title}</h4>
@@ -57,4 +60,4 @@ class HigherOrderFunction extends Component {
 		this.setState({ searchTerm: event.target.value });
 	}
 }
-export default HigherOrderFunction;
+export default Destructuration;

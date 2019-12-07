@@ -4,7 +4,7 @@ import ToDoRemovable from './editable-component';
 import EventHandlerDeclaration from './event-handler-declaration';
 import EventForms from './event-forms';
 import HigherOrderFunction from './higher-order-function';
-
+import Destructuration from './destructuration';
 class App extends Component {
 	render() {
 		return (
@@ -14,6 +14,7 @@ class App extends Component {
 				<EventHandlerDeclaration />
 				<EventForms />
 				<HigherOrderFunction />
+				<Destructuration />
 			</div>
 		);
 	}
