@@ -5,6 +5,7 @@ import EventHandlerDeclaration from './event-handler-declaration';
 import EventForms from './event-forms';
 import HigherOrderFunction from './higher-order-function';
 import Destructuration from './destructuration';
+import UncontrolledToControlled from './uncontrolled';
 class App extends Component {
 	render() {
 		return (
@@ -15,6 +16,7 @@ class App extends Component {
 				<EventForms />
 				<HigherOrderFunction />
 				<Destructuration />
+				<UncontrolledToControlled />
 			</div>
 		);
 	}
